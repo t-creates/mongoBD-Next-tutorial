@@ -2,7 +2,9 @@ import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import { InferGetServerSidePropsType } from 'next'
 
-export async function getServerSideProps(context) {
+
+
+export async function getServerSideProps() {
   try {
     await clientPromise
     // `await clientPromise` will use the default database passed in the MONGODB_URI
@@ -83,6 +85,9 @@ export default function Home({
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
+          <a href='/movies' className='card'>Movies</a>
+          <a href='/top' className='card'>Top</a>
+          <a href='/api/movies' className='card'>API</a>
         </div>
       </main>
 
